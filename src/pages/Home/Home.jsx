@@ -8,8 +8,14 @@ const Home = () => {
       <section className={styles.description}>
         <h1>LesVivienda</h1>
         <p>
-          Proyecto de cohabitación dirigido a mujeres lesbianas y bisexuales con el objetivo de facilitar el acceso justo y seguro a la vivienda. 
-          Promovemos un modelo social, solidario y autogestionado.
+          <strong>LesVivienda</strong> es una plataforma diseñada para una <strong>vivienda compartida exclusiva para mujeres lesbianas y bisexuales</strong>. 
+          Su misión es garantizar un <strong>acceso equitativo, seguro y digno a la vivienda</strong> a través de un <em>modelo social innovador</em> basado en la <strong>solidaridad, autogestión y apoyo mutuo</strong>.
+        </p>
+        <p>
+          La plataforma ofrece un enfoque integral que combina aspectos <strong>informativos, participativos y comunitarios</strong>. Facilita la <strong>comunicación, colaboración y fortalece el sentido de pertenencia</strong> entre sus usuarias.
+        </p>
+        <p>
+          Con esta herramienta digital, buscamos no solo ofrecer <strong>información clara y accesible</strong> sobre el proyecto habitacional, sino también fomentar la <strong>implicación activa de la comunidad</strong> en la gestión y desarrollo del espacio compartido, creando un entorno <strong>inclusivo y empoderador</strong>.
         </p>
       </section>
 
@@ -22,3 +28,4 @@ const Home = () => {
 };
 
 export default Home;
+
