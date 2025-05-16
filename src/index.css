@@ -4,7 +4,6 @@
   font-weight: 400;
 
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
   background-color: #242424;
 
   font-synthesis: none;
@@ -26,6 +25,13 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
+
+ 
+  background-image: url('./src/assets/fondo-web.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 html, body {
@@ -36,10 +42,18 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
+
+ 
+  background-image: url('./src/assets/fondo-web.png');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
 }
 
 main {
   flex: 1;
+  background-color: transparent; 
 }
 
 h1 {
@@ -69,7 +83,7 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    background-color: #ffffff;
+    
   }
   a:hover {
     color: #747bff;
