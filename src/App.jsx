@@ -1,14 +1,17 @@
-// src/App.jsx
 import React from "react";
 import { Outlet } from "react-router-dom";
 import Navbar from "./components/Navbar/Navbar";
-import "./App.module.css";
+import Footer from "./components/Footer/Footer";
+import "./index.css"; 
 
 function App() {
   return (
     <>
       <Navbar />
-      <Outlet />
+      <main>
+        <Outlet />
+      </main>
+      <Footer />
     </>
   );
 }
