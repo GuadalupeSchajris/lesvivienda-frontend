@@ -1,0 +1,146 @@
+.navbar {
+  display: flex;
+  align-items: center;
+  padding: 0 2rem;
+  gap: 2rem;
+  background-color: #000000;
+  height: 60px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  flex-wrap: nowrap;
+}
+
+.logoContainer {
+  flex-shrink: 0;
+  margin-right: 2rem;
+  margin-top: 0.25rem;
+}
+
+.logo {
+  height: 60px;
+  cursor: pointer;
+}
+
+.links {
+  display: flex;
+  flex-grow: 1;
+  gap: 0.5rem;
+  justify-content: center;
+  overflow-x: auto;
+  scrollbar-width: none; 
+}
+
+.links::-webkit-scrollbar {
+  display: none; 
+}
+
+.navLink {
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  text-decoration: none;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  transition: opacity 0.2s ease;
+  white-space: nowrap; 
+}
+
+.navLink:hover {
+  opacity: 0.8;
+}
+
+.searchLogin {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.searchInput {
+  border: 1px solid #ccc;
+  padding: 0.4rem 0.6rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  outline: none;
+  width: 140px;
+  background-color: #F7F1E3;
+}
+
+.loginButton {
+  background-color: #F7F1E3;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-weight: 600;
+  padding: 0.4rem 0.8rem;
+  border-radius: 4px;
+  transition: background-color 0.2s ease;
+}
+
+.loginButton:hover {
+  background-color: #ddd;
+}
+
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .logoContainer {
+    margin: 0 auto;
+    order: 0;
+  }
+
+  .logo {
+    height: 35px;
+  }
+
+  .links {
+    order: 1;
+    width: 100%;
+    justify-content: flex-start;
+    gap: 0.4rem;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    scrollbar-width: none;
+  }
+
+  .searchLogin {
+    order: 2;
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 0.5rem;
+  }
+
+  .searchInput {
+    width: 120px;
+    font-size: 0.9rem;
+  }
+
+  .loginButton {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .navbar {
+    padding: 0.8rem 1rem;
+  }
+
+  .logo {
+    height: 30px;
+  }
+
+  .navLink {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.85rem;
+  }
+
+  .searchInput {
+    width: 100px;
+  }
+}

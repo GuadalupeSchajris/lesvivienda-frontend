@@ -1,0 +1,23 @@
+.container {
+  padding: 2rem;
+  text-align: center;
+}
+
+.description {
+  margin-bottom: 2rem;
+}
+
+.linkButton {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #cc99cc;
+  color: white;
+  text-decoration: none;
+  border-radius: 8px;
+  font-weight: bold;
+  transition: background-color 0.3s ease;
+}
+
+.linkButton:hover {
+  background-color: #b380b3;
+}
