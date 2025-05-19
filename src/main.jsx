@@ -5,6 +5,7 @@ import App from "./App";
 import Home from "./pages/Home/Home";
 import Contacto from "./pages/Contacto/Contacto"; 
 import Propuestas from "./pages/Propuestas/Propuestas";
+import Login from "./pages/Login/Login";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -15,6 +16,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route index element={<Home />} />
           <Route path="contacto" element={<Contacto />} />
           <Route path="propuestas" element={<Propuestas />} />
+          <Route path="login" element={<Login />} />
         </Route>
       </Routes>
     </BrowserRouter>

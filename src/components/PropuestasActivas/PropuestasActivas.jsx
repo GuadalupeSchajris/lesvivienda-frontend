@@ -5,15 +5,15 @@ import Modal from "../Modal/Modal";
 const propuestasMock = [
   {
     id: 1,
-    pregunta: "¿Qué día prefieres para la limpieza general?",
-    opciones: ["Lunes", "Miércoles", "Viernes"],
-    fechaLimite: "2025-05-30",
+    pregunta: "¿Dónde prefieres que esté localizada?",
+    opciones: ["Barcelona ciudad", "Barcelona alrededores", "Girona", "Tarragona", "Lleida"],
+    fechaLimite: "2029-05-30",
   },
   {
     id: 2,
-    pregunta: "¿Qué planta decorativa añadir?",
-    opciones: ["Helecho", "Cactus", "Potos"],
-    fechaLimite: "2025-05-20",
+    pregunta: "¿Adiquimos vivienda ya construida o terreno?",
+    opciones: ["Vivienda a entrar", "Vivienda a reformar", "Terreno"],
+    fechaLimite: "2027-05-20",
   },
 ];
 

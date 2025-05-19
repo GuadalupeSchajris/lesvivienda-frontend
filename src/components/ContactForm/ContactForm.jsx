@@ -132,7 +132,7 @@ export default function ContactForm() {
         />
         {errors.asunto && <span className={styles.error}>{errors.asunto}</span>}
 
-        <label htmlFor="mensaje">¿Podemos ayudarte? Cuéntanos un poco más...</label>
+        <label htmlFor="mensaje">Mensaje</label>
         <textarea
           id="mensaje"
           name="mensaje"

@@ -38,7 +38,7 @@ export default function Navbar() {
           placeholder="Buscar..."
           className={styles.searchInput}
         />
-        <button className={styles.loginButton}>Login</button>
+        <Link to="/login" className={styles.loginButton}>Login</Link>
       </div>
     </nav>
   );
