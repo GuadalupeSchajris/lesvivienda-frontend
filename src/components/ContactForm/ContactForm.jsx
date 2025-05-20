@@ -59,6 +59,8 @@ export default function ContactForm() {
     }
 
     if (name === 'asunto') {
+       const filteredValue = value.replace(/[<>\/]/g, '');
+      setFormData(prev => ({ ...prev, [name]: filteredValue }));
       if (value.length > 25) {
         setErrors(prev => ({ ...prev, asunto: 'Máximo 25 caracteres' }));
       } else {

@@ -79,4 +79,21 @@
   width: 20px;
   height: 20px;
 }
+.registerPrompt {
+  margin-top: 1rem;
+  text-align: center;
+  font-size: 0.95rem;
+  color: black;
+}
+
+.registerLink {
+  color: #F7748D;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.registerLink:hover {
+  text-decoration: underline;
+}
+
 

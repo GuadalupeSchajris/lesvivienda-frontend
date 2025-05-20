@@ -99,23 +99,28 @@ export default function Login() {
               className={styles.eyeButton}
               aria-label="Mostrar u ocultar contraseña"
             >
-  {showPassword ? (
-  <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" >
-    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5
-      5 2.24 5 5-2.24 5-5 5zm0-8a3 3 0 100 6 3 3 0 000-6z"/>
-  </svg>
-) : (
-  <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24" >
-    <path d="M12 4.5C7 4.5 2.73 7.61 1 12c.68 1.72 1.8 3.23 3.18 4.44L2 18.59 3.41 20l2.54-2.54C8.11 18.39 9.99 19.5 12 19.5c5 0 9.27-3.11 11-7.5-.88-2.22-2.44-4.09-4.41-5.33L20.59 4 19.17 2.59l-4.07 4.07A6.98 6.98 0 0012 6c-2.76 0-5.26 1.68-6.32 4.09L12 16.41 13.41 15l-7.4-7.4C7.61 5.27 9.7 4.5 12 4.5z"/>
-  </svg>
-)}
-
-
+              {showPassword ? (
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c1.73 4.39 6 7.5 11 7.5s9.27-3.11 11-7.5c-1.73-4.39-6-7.5-11-7.5zM12 17c-2.76 0-5-2.24-5-5s2.24-5 5-5
+                    5 2.24 5 5-2.24 5-5 5zm0-8a3 3 0 100 6 3 3 0 000-6z"/>
+                </svg>
+              ) : (
+                <svg xmlns="http://www.w3.org/2000/svg" height="20" viewBox="0 0 24 24">
+                  <path d="M12 4.5C7 4.5 2.73 7.61 1 12c.68 1.72 1.8 3.23 3.18 4.44L2 18.59 3.41 20l2.54-2.54C8.11 18.39 9.99 19.5 12 19.5c5 0 9.27-3.11 11-7.5-.88-2.22-2.44-4.09-4.41-5.33L20.59 4 19.17 2.59l-4.07 4.07A6.98 6.98 0 0012 6c-2.76 0-5.26 1.68-6.32 4.09L12 16.41 13.41 15l-7.4-7.4C7.61 5.27 9.7 4.5 12 4.5z"/>
+                </svg>
+              )}
             </button>
           </div>
           {passError && <p className={styles.error}>{passError}</p>}
 
           <button type="submit" className={styles.submitButton}>Entrar</button>
+
+          <div className={styles.registerPrompt}>
+            ¿No estás registrado?{" "}
+            <a href="http://localhost:5173/Registro" className={styles.registerLink}>
+              HAZ CLICK AQUÍ
+            </a>
+          </div>
         </form>
       </div>
 
