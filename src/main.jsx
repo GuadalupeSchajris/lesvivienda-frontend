@@ -6,6 +6,7 @@ import Home from "./pages/Home/Home";
 import Contacto from "./pages/Contacto/Contacto"; 
 import Propuestas from "./pages/Propuestas/Propuestas";
 import Login from "./pages/Login/Login";
+import Registro from "./pages/Registro/Registro";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -17,6 +18,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="contacto" element={<Contacto />} />
           <Route path="propuestas" element={<Propuestas />} />
           <Route path="login" element={<Login />} />
+          <Route path="registro" element={<Registro />} />
         </Route>
       </Routes>
     </BrowserRouter>
