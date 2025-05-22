@@ -121,9 +121,7 @@ export default function Registro() {
     <div className={styles.registerContainer}>
       <h1 className={styles.title}>Crear cuenta</h1>
       <form onSubmit={handleSubmit} className={styles.form} noValidate>
-        <label htmlFor="email" className={styles.label}>
-          Email
-        </label>
+        <label htmlFor="email" className={styles.label}>Email</label>
         <input
           type="email"
           id="email"
@@ -132,14 +130,11 @@ export default function Registro() {
           value={formData.email}
           onChange={handleChange}
           className={styles.input}
-          aria-describedby="emailHelp"
           required
         />
         {errors.email && <p className={styles.error}>{errors.email}</p>}
 
-        <label htmlFor="password" className={styles.label}>
-          Contraseña
-        </label>
+        <label htmlFor="password" className={styles.label}>Contraseña</label>
         <div className={styles.passwordContainer}>
           <input
             type={showPassword ? "text" : "password"}
@@ -149,10 +144,9 @@ export default function Registro() {
             value={formData.password}
             onChange={handleChange}
             className={styles.input}
-            aria-describedby="passwordHelp"
             required
           />
-          <button 
+          <button
             type="button"
             onClick={() => setShowPassword(!showPassword)}
             className={styles.showPasswordButton}
@@ -172,9 +166,7 @@ export default function Registro() {
         </div>
         {errors.password && <p className={styles.error}>{errors.password}</p>}
 
-        <label htmlFor="name" className={styles.label}>
-          Nombre
-        </label>
+        <label htmlFor="name" className={styles.label}>Nombre</label>
         <input
           type="text"
           id="name"
@@ -183,16 +175,13 @@ export default function Registro() {
           value={formData.name}
           onChange={handleChange}
           className={styles.input}
-          aria-describedby="nameHelp"
           required
         />
         {errors.name && <p className={styles.error}>{errors.name}</p>}
 
         {errors.general && <p className={styles.error}>{errors.general}</p>}
 
-        <button type="submit" className={styles.submitButton}>
-          Crear cuenta
-        </button>
+        <button type="submit" className={styles.submitButton}>Crear cuenta</button>
       </form>
 
       {showModal && (
