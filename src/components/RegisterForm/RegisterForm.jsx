@@ -76,42 +76,44 @@ export default function Registro() {
     return valid;
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+const handleSubmit = async (e) => {
+  e.preventDefault();
 
-    if (validate()) {
-      try {
-        const response = await fetch("http://localhost:8080/auth/register", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify({
-            username: formData.email,
-            password: formData.password,
-            name: formData.name
-          })
-        });
+  if (validate()) {
+    try {
+      const response = await fetch("http://localhost:8080/auth/register", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          username: formData.email,  // o si quieres, podrías crear un username aparte
+          password: formData.password,
+          email: formData.email,
+          role: "user"  // fijo y obligatorio para el backend
+        })
+      });
 
-        if (response.ok) {
-          setShowModal(true);
-          setFormData({ email: "", password: "", name: "" });
-          setErrors({ email: "", password: "", name: "", general: "" });
-        } else {
-          const errorData = await response.json();
-          setErrors((prev) => ({
-            ...prev,
-            general: errorData.message || "Error al registrar"
-          }));
-        }
-      } catch (error) {
+      if (response.ok) {
+        setShowModal(true);
+        setFormData({ email: "", password: "", name: "" });
+        setErrors({ email: "", password: "", name: "", general: "" });
+      } else {
+        const errorData = await response.json();
         setErrors((prev) => ({
           ...prev,
-          general: "Error de red o del servidor"
+          general: errorData.message || "Error al registrar"
         }));
       }
+    } catch (error) {
+      setErrors((prev) => ({
+        ...prev,
+        general: "Error de red o del servidor"
+      }));
     }
-  };
+  }
+};
+
 
   const closeModal = () => {
     setShowModal(false);
