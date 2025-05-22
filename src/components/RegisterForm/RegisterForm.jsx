@@ -187,10 +187,9 @@ const handleSubmit = async (e) => {
       </form>
 
       {showModal && (
-        <Modal onClose={closeModal}>
-          <p>Cuenta creada con éxito 🎉</p>
-        </Modal>
-      )}
+  <Modal mensaje="Cuenta creada con éxito 🎉" onClose={closeModal} />
+)}
+      
     </div>
   );
 }
