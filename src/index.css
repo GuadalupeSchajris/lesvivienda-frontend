@@ -25,8 +25,7 @@ body {
   margin: 0;
   min-width: 320px;
   min-height: 100vh;
-
- 
+  overflow-x: hidden; 
   background-image: url('./src/assets/fondo-web.png');
   background-size: cover;
   background-position: center;
@@ -42,8 +41,6 @@ html, body {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-
- 
   background-image: url('./src/assets/fondo-web.png');
   background-size: cover;
   background-position: center;
@@ -83,7 +80,6 @@ button:focus-visible {
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;
-    
   }
   a:hover {
     color: #747bff;
