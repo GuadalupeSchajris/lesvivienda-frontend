@@ -82,65 +82,72 @@
 
 @media (max-width: 768px) {
   .navbar {
-    flex-wrap: wrap;
-    height: auto;
+    flex-direction: column;
+    align-items: center;
     padding: 1rem;
-    gap: 1rem;
+    height: auto;
   }
 
   .logoContainer {
-    margin: 0 auto;
+    margin: 0;
     order: 0;
   }
 
   .logo {
-    height: 35px;
+    height: 40px;
   }
 
   .links {
     order: 1;
     width: 100%;
-    justify-content: flex-start;
-    gap: 0.4rem;
-    overflow-x: auto;
+    justify-content: center;
+    flex-wrap: wrap; /* ✅ que puedan bajar */
+    gap: 0.5rem;
     padding-bottom: 0.5rem;
-    scrollbar-width: none;
+  }
+
+  .navLink {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    flex-shrink: 0; /* evita que se deformen */
   }
 
   .searchLogin {
     order: 2;
     width: 100%;
     justify-content: center;
-    gap: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem;
     margin-top: 0.5rem;
   }
 
   .searchInput {
-    width: 120px;
+    width: 130px;
     font-size: 0.9rem;
   }
 
   .loginButton {
-    padding: 0.3rem 0.6rem;
+    padding: 0.3rem 0.7rem;
     font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
-  .navbar {
-    padding: 0.8rem 1rem;
-  }
-
   .logo {
     height: 30px;
   }
 
   .navLink {
-    padding: 0.4rem 0.8rem;
     font-size: 0.85rem;
+    padding: 0.4rem 0.8rem;
   }
 
   .searchInput {
     width: 100px;
+  }
+
+  .loginButton {
+    font-size: 0.85rem;
+    padding: 0.3rem 0.6rem;
   }
 }
