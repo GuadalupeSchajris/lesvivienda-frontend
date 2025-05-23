@@ -1,12 +1,76 @@
-# React + Vite
+# 🌈 LesVivienda - Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 💜 Descripción del Proyecto
+LesVivienda es una web destinada a una vivienda de co-habitatge enfocada en mujeres lesbianas y bisexuales, con el propósito de facilitar el acceso justo y seguro a la vivienda mediante un modelo social, solidario y autogestionado.  
+La web ofrece un espacio informativo, participativo y comunitario para apoyar esta iniciativa.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🛠 Tecnologías Utilizadas
 
-## Expanding the ESLint configuration
+- React (con Vite) ⚛️  
+- React Router Dom para navegación 🚦  
+- CSS modular y/o estilos en componentes 🎨  
+- Validación de formularios con librerías propias o nativas ✔️  
+- ReCAPTCHA para protección en formulario de contacto 🔒  
+- GitHub para control de versiones 🐙
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+---
+
+## 🚀 Cómo Ejecutar el Proyecto
+
+1. Clona este repositorio:
+   ```bash
+   git clone https://github.com/GuadalupeSchajris/lesvivienda-frontend.git
+Instala las dependencias:
+
+bash
+Copiar
+Editar
+npm install
+Ejecuta la app en modo desarrollo:
+
+bash
+Copiar
+Editar
+npm run dev
+Abre tu navegador en http://localhost:5173 para ver la app.
+
+🗂 Estructura y Funcionalidades
+Navbar con logo, menú de secciones, barra de búsqueda (por ahora estática) y login/logout.
+
+Footer con texto "Todos los derechos reservados", enlaces a redes sociales y aviso legal.
+
+Secciones principales:
+
+Inicio: Presentación del proyecto y enlace al formulario de contacto.
+
+Vivienda Social de Alquiler: Información sobre vivienda social y contexto en Cataluña.
+
+Propuestas y Demandas: Encuestas participativas sobre temas clave.
+
+Valores: Normas y valores de convivencia.
+
+Perfil: Registro, login y edición/eliminación de perfil para usuarias autenticadas.
+
+Contacto: Formulario estático para enviar mensajes.
+
+Páginas legales: Aviso Legal, Política de Privacidad y Política de Cookies.
+
+🔐 Seguridad y Buenas Prácticas
+Validación de datos en formularios para garantizar calidad y seguridad.
+
+Protección de rutas privadas (perfil) para usuarias autenticadas.
+
+Integración con ReCAPTCHA para evitar spam en el formulario de contacto.
+
+👩‍💻 Sobre la Autora
+Guadalupe Hani Schajris
+Product Owner & Fullstack Developer
+
+GitHub: https://github.com/GuadalupeSchajris
+
+LinkedIn: https://www.linkedin.com/in/guadalupe-hani/
+
+¡Gracias por visitar LesVivienda! 💖
+Este proyecto busca crear un espacio seguro y justo para mujeres lesbianas y bisexuales en la búsqueda de vivienda social.
