@@ -21,7 +21,7 @@ export default function PropuestasActivas() {
   const [pagina, setPagina] = useState(1);
   const porPagina = 5;
   const [seleccionActual, setSeleccionActual] = useState({});
-  const [votaciones, setVotaciones] = useState({}); // guardará array con conteos de votos
+  const [votaciones, setVotaciones] = useState({}); 
 
   const [modalMensaje, setModalMensaje] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
@@ -50,7 +50,7 @@ export default function PropuestasActivas() {
     }
 
     try {
-      const response = await fetch(`http://localhost:8080/propuestas/${id}/votar`, {
+      const response = await fetch(`http://localhost:8080//${id}/votar`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ opcionIndex: seleccionActual[id] }),
@@ -63,7 +63,7 @@ export default function PropuestasActivas() {
       }
 
       const data = await response.json();
-      // data.votos debería ser un array con conteos por opción
+      
       setVotaciones((prev) => ({ ...prev, [id]: data.votos }));
       mostrarModal("Voto enviado con éxito");
     } catch (error) {

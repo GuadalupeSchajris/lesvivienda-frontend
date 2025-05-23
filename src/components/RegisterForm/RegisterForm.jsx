@@ -87,10 +87,10 @@ const handleSubmit = async (e) => {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          username: formData.email,  // o si quieres, podrías crear un username aparte
+          username: formData.email,  
           password: formData.password,
           email: formData.email,
-          role: "user"  // fijo y obligatorio para el backend
+          role: "user"  
         })
       });
 

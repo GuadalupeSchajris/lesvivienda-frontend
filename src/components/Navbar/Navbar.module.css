@@ -101,7 +101,7 @@
     order: 1;
     width: 100%;
     justify-content: center;
-    flex-wrap: wrap; /* ✅ que puedan bajar */
+    flex-wrap: wrap; 
     gap: 0.5rem;
     padding-bottom: 0.5rem;
   }
@@ -109,7 +109,7 @@
   .navLink {
     font-size: 0.9rem;
     padding: 0.5rem 1rem;
-    flex-shrink: 0; /* evita que se deformen */
+    flex-shrink: 0; 
   }
 
   .searchLogin {
