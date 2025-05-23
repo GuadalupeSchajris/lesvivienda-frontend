@@ -1,6 +1,6 @@
 .propuestasContainer {
   padding: 2rem;
-  color: #F7748D;
+  color: #000000;
 }
 
 .section {
@@ -19,7 +19,7 @@
 .linkButton {
   display: inline-block;
   background-color: #FF9000;
-  color: white;
+  color: rgb(0, 0, 0);
   padding: 0.75rem 1.5rem;
   border-radius: 8px;
   text-decoration: none;

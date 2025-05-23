@@ -9,7 +9,7 @@
 
 .title {
   text-align: center;
-  color: #F7748D;   
+  color: #000000;   
   font-size: 2rem;
   margin-bottom: 1rem;
 }
@@ -87,7 +87,7 @@
 }
 
 .registerLink {
-  color: #F7748D;
+  color: #00139e;
   font-weight: bold;
   text-decoration: none;
 }

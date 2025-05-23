@@ -60,7 +60,7 @@
 
 .submitButton {
   background-color: #FF9000;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 6px;
   padding: 0.7em 1.5em;

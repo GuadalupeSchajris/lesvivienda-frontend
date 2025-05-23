@@ -22,7 +22,7 @@ textarea {
 
 button {
   background-color: #FF9000;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   padding: 0.75rem;
   border-radius: 8px;
@@ -60,7 +60,7 @@ button:hover {
   margin-top: 1rem;
   padding: 0.5rem 1rem;
   background-color: #FF9000;
-  color: white;
+  color: rgb(0, 0, 0);
   border: none;
   border-radius: 4px;
   cursor: pointer;
