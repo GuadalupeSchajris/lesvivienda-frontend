@@ -8,9 +8,15 @@ const propuestasMock = [
     pregunta: "¿Dónde prefieres que esté localizada?",
     opciones: ["Barcelona ciudad", "Barcelona alrededores", "Girona", "Tarragona", "Lleida"],
     fechaLimite: "2029-05-30",
+    pregunta: "¿Dónde prefieres que esté localizada?",
+    opciones: ["Barcelona ciudad", "Barcelona alrededores", "Girona", "Tarragona", "Lleida"],
+    fechaLimite: "2029-05-30",
   },
   {
     id: 2,
+    pregunta: "¿Adiquimos vivienda ya construida o terreno?",
+    opciones: ["Vivienda a entrar", "Vivienda a reformar", "Terreno"],
+    fechaLimite: "2027-05-20",
     pregunta: "¿Adiquimos vivienda ya construida o terreno?",
     opciones: ["Vivienda a entrar", "Vivienda a reformar", "Terreno"],
     fechaLimite: "2027-05-20",
@@ -22,6 +28,11 @@ export default function PropuestasActivas() {
   const porPagina = 5;
   const [seleccionActual, setSeleccionActual] = useState({});
   const [votaciones, setVotaciones] = useState({});
+
+  const [modalMensaje, setModalMensaje] = useState("");
+  const [modalVisible, setModalVisible] = useState(false);
+  const [seleccionActual, setSeleccionActual] = useState({});
+  const [votaciones, setVotaciones] = useState({}); /
 
   const [modalMensaje, setModalMensaje] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
@@ -44,6 +55,30 @@ export default function PropuestasActivas() {
 
   const handleSubmit = (id, e) => {
     e.preventDefault();
+    if (seleccionActual[id] === undefined) {
+      mostrarModal("Por favor selecciona una opción antes de enviar");
+      return;
+    }
+
+    try {
+      const response = await fetch(`http://localhost:8080/propuestas/${id}/votar`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ opcionIndex: seleccionActual[id] }),
+      });
+
+      if (!response.ok) {
+        const err = await response.json();
+        mostrarModal(`Error al enviar el voto: ${err.message || "desconocido"}`);
+        return;
+      }
+
+      const data = await response.json();
+      
+      setVotaciones((prev) => ({ ...prev, [id]: data.votos }));
+      mostrarModal("Voto enviado con éxito");
+    } catch (error) {
+      mostrarModal("Error en la comunicación con el servidor");
     if (seleccionActual[id] !== undefined) {
       setVotaciones((prev) => ({ ...prev, [id]: seleccionActual[id] }));
       mostrarModal("Voto enviado con éxito");
@@ -83,7 +118,8 @@ export default function PropuestasActivas() {
                 <p>Gracias por votar. Resultado parcial:</p>
                 {propuesta.opciones.map((opcion, index) => (
                   <p key={index}>
-                    {opcion} {index === votaciones[propuesta.id] && "✅"}
+                    {opcion} - {votaciones[propuesta.id][index] || 0} votos{" "}
+                    {index === votaciones[propuesta.id].findIndex((v, i) => i === seleccionActual[propuesta.id]) && "✅"}
                   </p>
                 ))}
               </div>
