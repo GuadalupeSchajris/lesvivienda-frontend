@@ -8,15 +8,9 @@ const propuestasMock = [
     pregunta: "¿Dónde prefieres que esté localizada?",
     opciones: ["Barcelona ciudad", "Barcelona alrededores", "Girona", "Tarragona", "Lleida"],
     fechaLimite: "2029-05-30",
-    pregunta: "¿Dónde prefieres que esté localizada?",
-    opciones: ["Barcelona ciudad", "Barcelona alrededores", "Girona", "Tarragona", "Lleida"],
-    fechaLimite: "2029-05-30",
   },
   {
     id: 2,
-    pregunta: "¿Adiquimos vivienda ya construida o terreno?",
-    opciones: ["Vivienda a entrar", "Vivienda a reformar", "Terreno"],
-    fechaLimite: "2027-05-20",
     pregunta: "¿Adiquimos vivienda ya construida o terreno?",
     opciones: ["Vivienda a entrar", "Vivienda a reformar", "Terreno"],
     fechaLimite: "2027-05-20",
@@ -27,12 +21,7 @@ export default function PropuestasActivas() {
   const [pagina, setPagina] = useState(1);
   const porPagina = 5;
   const [seleccionActual, setSeleccionActual] = useState({});
-  const [votaciones, setVotaciones] = useState({});
-
-  const [modalMensaje, setModalMensaje] = useState("");
-  const [modalVisible, setModalVisible] = useState(false);
-  const [seleccionActual, setSeleccionActual] = useState({});
-  const [votaciones, setVotaciones] = useState({}); /
+  const [votaciones, setVotaciones] = useState({}); // guardará array con conteos de votos
 
   const [modalMensaje, setModalMensaje] = useState("");
   const [modalVisible, setModalVisible] = useState(false);
@@ -53,7 +42,7 @@ export default function PropuestasActivas() {
 
   const cerrarModal = () => setModalVisible(false);
 
-  const handleSubmit = (id, e) => {
+  const handleSubmit = async (id, e) => {
     e.preventDefault();
     if (seleccionActual[id] === undefined) {
       mostrarModal("Por favor selecciona una opción antes de enviar");
@@ -74,16 +63,11 @@ export default function PropuestasActivas() {
       }
 
       const data = await response.json();
-      
+      // data.votos debería ser un array con conteos por opción
       setVotaciones((prev) => ({ ...prev, [id]: data.votos }));
       mostrarModal("Voto enviado con éxito");
     } catch (error) {
       mostrarModal("Error en la comunicación con el servidor");
-    if (seleccionActual[id] !== undefined) {
-      setVotaciones((prev) => ({ ...prev, [id]: seleccionActual[id] }));
-      mostrarModal("Voto enviado con éxito");
-    } else {
-      mostrarModal("Por favor selecciona una opción antes de enviar");
     }
   };
 
