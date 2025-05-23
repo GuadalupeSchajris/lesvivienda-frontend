@@ -6,19 +6,36 @@ export default function EnviarPropuesta() {
   const [nombre, setNombre] = useState("");
   const [propuesta, setPropuesta] = useState("");
   const [showModal, setShowModal] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const finalNombre = nombre.trim() || "Anónima";
 
-    console.log("Enviado a admin:", {
-      nombre: finalNombre,
-      propuesta,
-    });
+    try {
+      const response = await fetch("http://localhost:8080/propuestas", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ nombre: finalNombre, propuesta }),
+      });
 
-    setNombre("");
-    setPropuesta("");
-    setShowModal(true);
+      if (!response.ok) {
+        throw new Error("Error al enviar la propuesta");
+      }
+
+      const data = await response.json();
+      console.log("Respuesta del servidor:", data);
+
+      setNombre("");
+      setPropuesta("");
+      setError(null);
+      setShowModal(true);
+    } catch (err) {
+      console.error(err);
+      setError("No se pudo enviar la propuesta. Intenta de nuevo más tarde.");
+    }
   };
 
   return (
@@ -38,6 +55,8 @@ export default function EnviarPropuesta() {
         />
         <button type="submit">Enviar</button>
       </form>
+
+      {error && <p style={{ color: "red" }}>{error}</p>}
 
       {showModal && (
         <Modal

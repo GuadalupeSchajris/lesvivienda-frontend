@@ -37,7 +37,7 @@ export default function Login() {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
 
     if (!email || !password) {
@@ -52,13 +52,27 @@ export default function Login() {
       return;
     }
 
-    if (email === "user@example.com" && password === "Test123") {
-      setModalMessage("Inicio de sesión exitoso!");
-      setShowModal(true);
-      setEmail("");
-      setPassword("");
-    } else {
-      setModalMessage("Usuario no registrado o datos incorrectos.");
+    try {
+      const response = await fetch("http://localhost:8080/auth/login", {
+  method: "POST",
+  headers: { "Content-Type": "application/json" },
+  body: JSON.stringify({ email, password }),
+});
+
+
+      const data = await response.json();
+
+      if (response.ok) {
+        setModalMessage(data.message || "Inicio de sesión exitoso!");
+        setShowModal(true);
+        setEmail("");
+        setPassword("");
+      } else {
+        setModalMessage(data.message || "Usuario no registrado o datos incorrectos.");
+        setShowModal(true);
+      }
+    } catch (error) {
+      setModalMessage("Error de conexión con el servidor.");
       setShowModal(true);
     }
   };
@@ -125,7 +139,7 @@ export default function Login() {
       </div>
 
       {showModal && (
-        <Modal message={modalMessage} onClose={() => setShowModal(false)} />
+        <Modal mensaje={modalMessage} onClose={() => setShowModal(false)} />
       )}
     </>
   );
