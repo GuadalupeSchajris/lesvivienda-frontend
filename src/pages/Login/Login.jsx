@@ -15,7 +15,7 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
 
   const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{7,12}$/;
+  const passRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{7,12}$/;
 
   const handleEmailChange = (e) => {
     const value = e.target.value;
