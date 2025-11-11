@@ -10,6 +10,7 @@ const navItems = [
   { name: "Valores", path: "/valores", bgColor: "#00821B", color: "white" },
   { name: "Perfil", path: "/perfil", bgColor: "#004BFF", color: "white" },
   { name: "Contacto", path: "/contacto", bgColor: "#780089", color: "white" },
+  { name: "Admin", path: "/adminpanel", bgColor: "#FABADA", color: "black"},
 ];
 
 export default function Navbar() {

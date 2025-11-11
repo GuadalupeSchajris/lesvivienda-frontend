@@ -7,6 +7,7 @@ import Contacto from "./pages/Contacto/Contacto";
 import Propuestas from "./pages/Propuestas/Propuestas";
 import Login from "./pages/Login/Login";
 import Registro from "./pages/Registro/Registro";
+import AdminPanel from "./pages/AdminPanel/AdminPanel";
 
 
 ReactDOM.createRoot(document.getElementById("root")).render(
@@ -19,6 +20,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="propuestas" element={<Propuestas />} />
           <Route path="login" element={<Login />} />
           <Route path="registro" element={<Registro />} />
+          <Route path="adminpanel" element={<AdminPanel />} />
         </Route>
       </Routes>
     </BrowserRouter>
